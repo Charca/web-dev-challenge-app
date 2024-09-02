@@ -1,0 +1,11 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import ChallengeApp from '../../app/ChallengeApp'
+import type { Id } from '../../../convex/_generated/dataModel'
+
+const { id: challengeId } = Astro.params as { id: Id<'challenges'> }
+---
+
+<Layout title="Web Dev Challenge">
+  <ChallengeApp challengeId={challengeId} client:load client:only="react" />
+</Layout>
